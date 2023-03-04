@@ -333,8 +333,8 @@
 
     
     /* Init ScrollMagic controller for Reveal on scroll] */
-    var revealDuration = 1;
-    var revealStartTime = 0.5;
+    var revealDuration = 0.5;
+    var revealStartTime = 0.3;
 
     // Section title and content animation start 
     var controller = new ScrollMagic.Controller();

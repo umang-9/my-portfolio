@@ -882,10 +882,10 @@ blockquote {
 }
 
 .header .logo .logo-lnk {
-    font-size: 18px;
+    font-size: 30px;
     text-decoration: none;
     display: inline-block;
-    max-width: 100px
+    font-family: mr dafoe;
 }
 
 .header .download-cv-btn {
@@ -1816,7 +1816,6 @@ blockquote {
     display: inline-block;
     vertical-align: top;
     width: 50%;
-    text-align: center;
 }
 
 .skills .name {
@@ -1824,7 +1823,11 @@ blockquote {
     position: relative;
     font-size: 18px;
     color: #fff;
-    font-weight: 800
+    font-weight: 800;
+}
+
+.skills.circles .name {
+    text-align: center;
 }
 
 .skills .single-post-text {
