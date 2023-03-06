@@ -5422,3 +5422,12 @@ span.post-page-numbers {
 		bottom: 30px;
 	}
 }
+
+@media (max-width: 720px) {
+  
+    .skills .name,
+    .single-post-text ul>li {
+      text-align: left;
+    }
+  
+  }

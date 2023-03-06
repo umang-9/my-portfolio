@@ -446,7 +446,7 @@
     }
 
     $("header .top-menu").on("click", "a", function () {
-        $('header').removeClass('active');
+        
     });
 
     function scrollNav() {
@@ -454,6 +454,7 @@
           $('html, body').stop().animate({
               scrollTop: $( $(this).attr('href') ).offset().top-90
           }, 900);
+          $('header').removeClass('active');
           return false;
         });
     }
