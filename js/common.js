@@ -231,44 +231,44 @@
     }))
 
     /* Locomotive scroll (ls) :: Start */
-    var optionsLs = {
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true,
-        multiplier: 1.25,
-        getDirection: true,
-        getSpeed: true,
-        reloadOnContextChange: true
-        // resetNativeScroll: false
-    };
+    // var optionsLs = {
+    //     el: document.querySelector('[data-scroll-container]'),
+    //     smooth: true,
+    //     multiplier: 1.25,
+    //     getDirection: true,
+    //     getSpeed: true,
+    //     reloadOnContextChange: true
+    //     // resetNativeScroll: false
+    // };
 
-    if ($('[data-scroll-container]').length) {
+    // if ($('[data-scroll-container]').length) {
 
-        // Init
-        const ls = new LocomotiveScroll(optionsLs);
+    //     // Init
+    //     const ls = new LocomotiveScroll(optionsLs);
 
-        // functions
-        window.lsScrollTo = function (toPosition, offset = 0) {
-            ls.scrollTo(toPosition, {
-                offset: offset
-            });
-        }
+    //     // functions
+    //     window.lsScrollTo = function (toPosition, offset = 0) {
+    //         ls.scrollTo(toPosition, {
+    //             offset: offset
+    //         });
+    //     }
 
-        // Update to recalculate the scroll
-        window.lsUpdate = function () {
-            setTimeout(function () {
-                ls.update();
-            }, 300);
-        }
+    //     // Update to recalculate the scroll
+    //     window.lsUpdate = function () {
+    //         setTimeout(function () {
+    //             ls.update();
+    //         }, 300);
+    //     }
 
-        // Events
-        // on Scroll event replaces $(document).scroll event
-        ls.on('scroll', function (args) {
-            onScroll(args);
-        });
+    //     // Events
+    //     // on Scroll event replaces $(document).scroll event
+    //     ls.on('scroll', function (args) {
+    //         onScroll(args);
+    //     });
 
-        // Update on init
-        lsUpdate();
-    }
+    //     // Update on init
+    //     lsUpdate();
+    // }
     /* Locomotive scroll :: End */
 
     // Fallback for events of no custom scroll
@@ -389,14 +389,14 @@
         window.onscroll = function(e) {
             // console.clear();
         
-            if(this.oldScroll > this.scrollY){
-            //   console.log('Scrolling up');
-            $('header').css('position','fixed');
-            }
-            else{
-            //   console.log('Scrolling down');
-            $('header').css('position','absolute');
-            }
+            // if(this.oldScroll > this.scrollY){
+            // //   console.log('Scrolling up');
+            // $('header').css('position','fixed');
+            // }
+            // else{
+            // //   console.log('Scrolling down');
+            // $('header').css('position','absolute');
+            // }
             
             this.oldScroll = this.scrollY;
         }
@@ -405,13 +405,13 @@
     $('.back-to-top').click(function (e) {
         e.preventDefault();
 
-        if ($('[data-scroll-container]').length) {
-            lsScrollTo("top");
-        } else {
+        // if ($('[data-scroll-container]').length) {
+        //     lsScrollTo("top");
+        // } else {
             $('html, body').animate({
                 scrollTop: 0
             }, 800);
-        }
+        // }
     });
 
     function onScroll(e) {
@@ -437,17 +437,27 @@
             })
         }; 
 
-        if (window.matchMedia("(max-width: 991px)").matches) {
+        // if (window.matchMedia("(max-width: 991px)").matches) {
             if (scrollPos > 10) {
                 $('header').css('position','fixed');
             }
-        }
+        // }
         
     }
 
     $("header .top-menu").on("click", "a", function () {
         $('header').removeClass('active');
     });
+
+    function scrollNav() {
+        $('.menu a').click(function(){  
+          $('html, body').stop().animate({
+              scrollTop: $( $(this).attr('href') ).offset().top-90
+          }, 900);
+          return false;
+        });
+    }
+    scrollNav();
 
 })(jQuery)
 
