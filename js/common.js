@@ -445,9 +445,16 @@
         
     }
 
-    $("header .top-menu").on("click", "a", function () {
-        
-    });
+    $('.mouse-btn').on('click',function (e) {
+        var target = this.hash,
+            $target = $(target);
+      
+        $('html, body').stop().animate({
+          'scrollTop': $target.offset().top-120
+        }, 900, 'swing', function () {
+          window.location.hash = target;
+        });
+      });
 
     function scrollNav() {
         $('.menu a').click(function(){  
