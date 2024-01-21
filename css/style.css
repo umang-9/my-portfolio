@@ -5445,6 +5445,15 @@ span.post-page-numbers {
     display: none;
 }
 
+@media screen and (max-width: 1199px) {
+    
+    .background-img {
+        right: 0;
+        width: 25vw;
+        height: 25vw;
+    }
+}
+
 @media (max-width: 767px) {
 	.back-to-top {
 		width: 30px;
@@ -5452,6 +5461,14 @@ span.post-page-numbers {
 		line-height: 30px;
 		bottom: 30px;
 	}
+    .background-img {
+        right: 0;
+        width: 200px;
+        height: 200px;
+        bottom: auto;
+        top: 100px;
+        border-width: 5px;
+    }
 }
 
 @media (max-width: 720px) {
