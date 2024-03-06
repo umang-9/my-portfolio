@@ -3169,6 +3169,7 @@ blockquote {
     font-size: 18px;
     color: #fff;
     font-weight: 800;
+    word-wrap: break-word;
     transition: all .3s ease 0s;
     -moz-transition: all .3s ease 0s;
     -webkit-transition: all .3s ease 0s;
